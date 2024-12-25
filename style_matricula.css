@@ -70,7 +70,7 @@ select:focus {
 h1 {
     font-weight: 700;
     font-size: 30px;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
     color: white;
     text-align: center;
 }
@@ -83,12 +83,17 @@ nav ul a {
 }
 
 nav ul {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 body {
     background-color: #001233;
     padding: 10px 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    max-height: 100vh;
     
 }
 
@@ -99,8 +104,8 @@ form {
 
 label {
     /* border: 1px solid red; */
-    padding: 5px 0;
-    margin-top: 5px;
+    padding: 10px 0;
+    margin-top: 10px;
     font-weight: 600;
     font-size: 15px;
     color: white;
@@ -120,7 +125,7 @@ input::placeholder {
 
 button {
     border-radius: 5px;
-    margin-top: 15px;
+    margin-top: 25px;
     width: 6rem;
     align-self: center;
     text-align: center;
