@@ -21,10 +21,12 @@ dataNascimento.addEventListener('input', function (e) {
 })
 
 let celNumero = document.querySelector('#tel');
+let timeOut;
 
 celNumero.addEventListener('input', function (e) {
 
-    setTimeout(() => { //esperar o navegador processar a digitação antes de formatar o campo (bug que acontece quando usa o código no celular)
+    clearTimeout(timeOut)
+    timeOut = setTimeout(() => { //esperar o navegador processar a digitação antes de formatar o campo (bug que acontece quando usa o código no celular)
 
         let num = celNumero.value.replace(/\(|\)/g, '')
 
@@ -35,5 +37,5 @@ celNumero.addEventListener('input', function (e) {
         if (num.length <= 2) {
             celNumero.value = `(${num.slice(0, 2)})`;
         }
-    }, 0);
+    }, 150);
 })
