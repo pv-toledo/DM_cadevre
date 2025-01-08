@@ -19,23 +19,3 @@ dataNascimento.addEventListener('input', function (e) {
         dataNascimento.value = `${dnasc.slice(0, 2)}/${dnasc.slice(2, 4)}/${dnasc.slice(4, 8)}`
     }
 })
-
-let celNumero = document.querySelector('#tel');
-let timeOut;
-
-celNumero.addEventListener('input', function (e) {
-
-    clearTimeout(timeOut)
-    timeOut = setTimeout(() => { //esperar o navegador processar a digitação antes de formatar o campo (bug que acontece quando usa o código no celular)
-
-        let num = celNumero.value.replace(/\(|\)/g, '')
-
-        if (e.inputType === 'deleteContentBackward') {
-            return;
-        }
-
-        if (num.length <= 2) {
-            celNumero.value = `(${num.slice(0, 2)})`;
-        }
-    }, 0);
-})
