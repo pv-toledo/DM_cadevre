@@ -24,13 +24,16 @@ let celNumero = document.querySelector('#tel');
 
 celNumero.addEventListener('input', function (e) {
 
-    let num = celNumero.value.replace(/\(|\)/g ,'')
+    setTimeout(() => { //esperar o navegador processar a digitação antes de formatar o campo (bug que acontece quando usa o código no celular)
 
-    if (e.inputType === 'deleteContentBackward') {
-        return;
-    }
+        let num = celNumero.value.replace(/\(|\)/g, '')
 
-    if (num.length <= 2) {
-        celNumero.value = `(${num.slice(0,2)})`;
-    }
+        if (e.inputType === 'deleteContentBackward') {
+            return;
+        }
+
+        if (num.length <= 2) {
+            celNumero.value = `(${num.slice(0, 2)})`;
+        }
+    }, 0);
 })
