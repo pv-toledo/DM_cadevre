@@ -37,5 +37,5 @@ celNumero.addEventListener('input', function (e) {
         if (num.length <= 2) {
             celNumero.value = `(${num.slice(0, 2)})`;
         }
-    }, 150);
+    }, 0);
 })
